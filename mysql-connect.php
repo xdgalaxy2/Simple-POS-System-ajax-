@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "test";
+$password = "password";
 $database = "ITS4";
 
 // Create connection

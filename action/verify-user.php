@@ -15,6 +15,7 @@ if($_POST['username'] && $_POST['password']){
         $verify = password_verify($_POST['password'], $row['password']);
   
         if ($verify) {
+            $_SESSION['admin'] = $row['admin'];
             $_SESSION['user_id'] = $row['id'];
             $_SESSION['fulname'] = $row['firstname'].' '.$row['lastname'];
             $response['message'] = 'Password Verified!';

@@ -191,6 +191,10 @@ $(function(){
         }
     });
 
+    $(".search-student").on('keyup',function(e) {
+            loadStudentLists();
+    });
+
     function loadStudentLists(){
 
         var search = $(".search-student").val();

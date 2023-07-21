@@ -33,13 +33,14 @@ $response = array();
             }
         }else{
             if($_POST["password"] == $_POST["confirm-password"]){
-                $stmt = $conn->prepare("INSERT INTO students (firstname, lastname, email, username, password) VALUES (?, ?, ?, ?, ?)");
-                $stmt->bind_param("sssss", $first_name, $last_name, $username,$password, $email);
+                $stmt = $conn->prepare("INSERT INTO students (firstname, lastname,  username, email, password) VALUES (?, ?, ?, ?, ?)");
+                $stmt->bind_param("sssss", $first_name, $last_name, $username, $email, $password);
                 $first_name = $_POST["firstname"];
                 $last_name = $_POST["lastname"];
                 $username = $_POST["username"];
-                $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
                 $email = $_POST["email"];
+                $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+                
             
                 if ($stmt->execute()) {
                     $response['message'] = "Record add successfully!";

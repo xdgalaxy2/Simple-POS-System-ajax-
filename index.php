@@ -34,7 +34,7 @@ if(empty($_SESSION['user_id'])){
 
 
        <?php echo 'Welcome '.$_SESSION['fulname'].'!'; ?> <a href="#" id="logout-user">Logout</a>
-
+       <?php if ($_SESSION['admin']==1) {?>
         <div class=" mt-5">
             <b>STUDENTS LIST</b>
 
@@ -57,6 +57,7 @@ if(empty($_SESSION['user_id'])){
                 <tbody id="students-list"><tbody>
             </table>
         </div>
+    <?php }?>
 
         
         <!-- Profile Modal -->
