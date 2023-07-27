@@ -37,7 +37,7 @@ $(function(){
                             'success'
                           )
 
-                        loadStudentLists();
+                        //loadStudentLists();
         
                     }else{
                         
@@ -112,6 +112,58 @@ $(function(){
           // is called always when the request is complete. (no matter, it is success/error response from server.)
           complete : function(data,status) {
               //console.log(data.responseText);
+          },
+          error:function (xhr, ajaxOptions, thrownError){
+              console.log(xhr.responseText);
+          }
+      });
+
+    })
+
+
+    $("#signup-form").submit(function(e){
+        e.preventDefault();
+
+        $.ajax({
+          type        : 'POST',  
+          url         : 'action/save-profile.php',
+          data        : $('#signup-form').serialize(), // data : $('#form_ID').serialize() or data : {var1:val1,var2:val2}
+          dataType    : 'json',  //  xml, html, script, json, text
+          beforeSend : function() {
+            $('#login-message').html("Saving Profile.");
+          },
+          //is called when the server returns success status code, like: 200, 201
+          success:function(data){   
+              //console.log(data);
+            if(data.message=='Create account successfully!'){
+
+                $('#login-message').html("");
+
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: data.message,
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+
+
+            }else{
+                
+                  Swal.fire({
+                    icon: 'warning',
+                    title: 'Create account',
+                    text: data.message,
+                    footer: ''
+                  })
+                 
+            }
+              
+             
+          },
+          // is called always when the request is complete. (no matter, it is success/error response from server.)
+          complete : function(data,status) {
+              console.log(data.responseText);
           },
           error:function (xhr, ajaxOptions, thrownError){
               console.log(xhr.responseText);
@@ -223,6 +275,7 @@ $(function(){
             }
         });
     }
+
 
 
     $("#logout-user").click(function(e){

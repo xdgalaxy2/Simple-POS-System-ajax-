@@ -18,28 +18,100 @@ if(!empty($_SESSION['user_id'])){
 
         <!-- Custom -->
         <script src="js/script.js"></script>
+
         <link href="css/style.css" rel="stylesheet" type="text/css">
 
         <!-- Sweet Alert -->
         <!-- https://sweetalert2.github.io/#examples -->
         <script src="lib/sweet-alert/sweetalert2.min.js"></script>
         <link href="lib/sweet-alert/sweetalert2.min.css" rel="stylesheet" type="text/css">
+        
+        <style>
+            body {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url('assets/images/bg.jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        </style>
+
 
 
     </head>
     <body>
+        <div class="login-box">
+    <img src="assets/images/FU_logo.png" class="avatar">
+    <div class="wrapper">
+         <div class="title-text">
+            <div class="title login">
+               Login
+            </div>
+            <div class="title signup">
+               Signup
+            </div>
+         </div>
+         <div class="form-container">
+            <div id="login-message" class=""></div>
+            <div class="slide-controls">
+               <input type="radio" name="slide" id="login" checked>
+               <input type="radio" name="slide" id="signup">
+               <label for="login" class="slide login">Login</label>
+               <label for="signup" class="slide signup">Signup</label>
+               <div class="slider-tab"></div>
+            </div>
+        <div class="form-inner">
+          <form id="login-form" class="login" method="post">
+            <div class="field">
+              <div id="login-message" class=""></div>
+               <input type="text" class="form-control" name="username" placeholder="ID number" required>
+            </div>
+            <div class="field">
+               <input type="password" class="form-control" name="password" placeholder="Password" required>
+            </div>
+            <div class="pass-link">
+               <a href="#">Forgot password?</a>
+            </div>
+            <div class="field btn">
+              <div class="btn-layer"></div>
+               <input type="submit" name="login" value="Login">
+            </div>
 
-        <div class="login-wrapper">
-            <form id="login-form" method="POST">
-                <h5 class="title">User Login</h5>
-                <div class="form-group">
-                    <div id="login-message" class=""></div>
-                    <div class="form-section"><input type="text" value="" name="username" class="form-control" placeholder="Username"></div>
-                    <div class="form-section"><input type="password" value="" name="password" class="form-control" placeholder="Password"></div>
-                    <div class="form-section"><input type="submit" value="Login" class="btn btn-primary"></div>
-                </div>
-            </form>
-        <div>
+            <div class="signup-link">
+               Not a member? <a href="">Signup now</a>
+            </div>
+         </form>
+         <form id= "signup-form" class ="signup" method="post">
+                    <div class="field">
+                        <div id="login-message" class=""></div>
+                        <input type="text" name="firstname" placeholder="First name" required>
+                        
+                    </div>
+                    <div class="field">
+                        <input type="text" name="lastname" placeholder="Last name" required>
+                      
+                    </div>
+                    <div class="field">
+                        <input type="text" name="email" placeholder="Email" required>
+                        
+                    </div>
+                    <div class="field">
+                        <input type="text" name="username" placeholder="Username" required>
+                        
+                    </div>
+                    <div class="field">
+                        <input type="password" name="password" placeholder="Password" required>
+                        
+                    </div>
+                    <div class="field">
+                        <input type="password" name="confirm-password" placeholder="Confirm password" required>
+                        
+                    </div>
+                    <div class="field btn">
+                        <div class="btn-layer"></div>
+                        <input type="submit" name="register" value="Create Account">
+                    </div>
+                </form>
+        </div>
+        <script src="js/transition.js"></script>
     </body>
 
 </html>
