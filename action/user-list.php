@@ -22,10 +22,10 @@ if ($result->num_rows > 0) {
         <td scope="row"><?php echo $row['lastname'].', '.$row['firstname'] ; ?></td>
         <td scope="row"><?php echo $row['email']; ?></td>
         <td scope="row">
-          <a href="#" class="edit-student"  data-toggle="modal" data-target="#profileModal" data-fname="<?php echo $row['firstname'] ?>" 
+          <a href="#" class="edit-user"  data-toggle="modal" data-target="#profileModal" data-fname="<?php echo $row['firstname'] ?>" 
           data-lname="<?php echo $row['lastname'] ?>" data-id="<?php echo $row['id'] ?>" data-email="<?php echo $row['email'] ?>" 
           data-username ="<?php echo $row['username'] ?>">EDIT</a> 
-          <a href="#" class="delete-student" data-id="<?php echo $row['id']; ?>">DELETE</a> 
+          <a href="#" class="delete-user" data-id="<?php echo $row['id']; ?>">DELETE</a> 
         </td>
     </tr>
     <?php

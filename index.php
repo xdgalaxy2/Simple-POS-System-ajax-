@@ -36,16 +36,16 @@ if(empty($_SESSION['user_id'])){
        <?php echo 'Welcome '.$_SESSION['fulname'].'!'; ?> <a href="#" id="logout-user">Logout</a>
        <?php if ($_SESSION['admin']==1) {?>
         <div class=" mt-5">
-            <b>STUDENTS LIST</b>
+            <b>USER LIST</b>
 
             <div style="padding: 6px;" >
-                <button type="button" data-toggle="modal" data-target="#profileModal" class="btn btn-primary" name="add-student" id="add-profile" >Add Student</button>                      
+                <button type="button" data-toggle="modal" data-target="#profileModal" class="btn btn-primary" name="add-user" id="add-profile" >Add User</button>                      
             
             </div>
             
  
             <div class="search-wrapper">
-                        <div class="form-section"><input type="text" value="" name="search" class="form-control search-student" placeholder="Search"></div>
+                        <div class="form-section"><input type="text" value="" name="search" class="form-control search-user" placeholder="Search"></div>
             </div>
             <table class="table  table-striped">
                 <thead>
@@ -54,7 +54,7 @@ if(empty($_SESSION['user_id'])){
                     </tr>
                 </thead>
                 <!-- List Loop -->
-                <tbody id="students-list"><tbody>
+                <tbody id="user-list"><tbody>
             </table>
         </div>
     <?php }?>

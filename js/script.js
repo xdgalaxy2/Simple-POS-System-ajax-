@@ -1,6 +1,6 @@
 $(function(){
 
-    loadStudentLists();
+    loadUserLists();
 
     
 
@@ -20,7 +20,7 @@ $(function(){
             
                 $.ajax({
                     type        : 'POST',  
-                    url         : 'action/update-student.php',
+                    url         : 'action/update-user.php',
                     data        : $('#update-profile').serialize() , // data : $('#form_ID').serialize() or data : {var1:val1,var2:val2}
                     dataType    : 'json',  //  xml, html, script, json, text
                     beforeSend : function() {
@@ -37,7 +37,7 @@ $(function(){
                             'success'
                           )
 
-                        //loadStudentLists();
+                        //loadUserLists();
         
                     }else{
                         
@@ -173,7 +173,7 @@ $(function(){
     })
 
     
-    $(document).on('click', '.delete-student', function(e){
+    $(document).on('click', '.delete-user', function(e){
         e.preventDefault();
         
         var id = $(this).attr("data-id");
@@ -191,7 +191,7 @@ $(function(){
             
                 $.ajax({
                     type        : 'POST',  
-                    url         : 'action/delete-student.php',
+                    url         : 'action/delete-user.php',
                     data        : {id:id}, // data : $('#form_ID').serialize() or data : {var1:val1,var2:val2}
                     dataType    : 'json',  //  xml, html, script, json, text
                     beforeSend : function() {
@@ -204,17 +204,17 @@ $(function(){
                         
                         Swal.fire(
                             'Deleted!',
-                            'Student record has been deleted.',
+                            'User record has been deleted.',
                             'success'
                           )
 
-                        loadStudentLists();
+                        loadUserLists();
         
                     }else{
                         
                         Swal.fire(
                             'Delete',
-                            'Failed to delete student record!',
+                            'Failed to delete user record!',
                             'error'
                           )
                         
@@ -237,23 +237,23 @@ $(function(){
     })
 
     
-    $(".search-student").on('keypress',function(e) {
+    $(".search-user").on('keypress',function(e) {
         if(e.which == 13) {
-            loadStudentLists();
+            loadUserLists();
         }
     });
 
-    $(".search-student").on('keyup',function(e) {
-            loadStudentLists();
+    $(".search-user").on('keyup',function(e) {
+            loadUserLists();
     });
 
-    function loadStudentLists(){
+    function loadUserLists(){
 
-        var search = $(".search-student").val();
+        var search = $(".search-user").val();
 
         $.ajax({
             type        : 'POST',  
-            url         : 'action/students-list.php',
+            url         : 'action/user-list.php',
             data        : {search:search}, // data : $('#form_ID').serialize() or data : {var1:val1,var2:val2}
             dataType    : 'html',  //  xml, html, script, json, text
             beforeSend : function() {
@@ -263,7 +263,7 @@ $(function(){
             success:function(data){   
                 //console.log(data);
            
-                $('#students-list').html(data);
+                $('#user-list').html(data);
                
             },
             // is called always when the request is complete. (no matter, it is success/error response from server.)
