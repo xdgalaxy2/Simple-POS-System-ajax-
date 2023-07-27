@@ -6,7 +6,7 @@ require '../mysql-connect.php';
 
 if($_POST['username'] && $_POST['password']){
 
-    $sql = "SELECT * FROM students WHERE username='".$_POST['username']."'";
+    $sql = "SELECT * FROM accounts WHERE username='".$_POST['username']."'";
     $result = mysqli_query($conn,$sql) or die(mysqli_error($conn));
     if($row = mysqli_fetch_assoc($result))
     {

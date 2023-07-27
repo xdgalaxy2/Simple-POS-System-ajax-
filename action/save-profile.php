@@ -10,7 +10,7 @@ $response = array();
         if($_POST["profile-id"]){
             if($_POST["password"] && $_POST["confirm-password"]){
                 if($_POST["password"] ==  $_POST["confirm-password"]){
-                    $stmt = $conn->prepare("UPDATE Students SET firstname = ?, lastname = ?, email = ?, password = ? WHERE id = '".$_POST["profile-id"]."'");
+                    $stmt = $conn->prepare("UPDATE accounts SET firstname = ?, lastname = ?, email = ?, password = ? WHERE id = '".$_POST["profile-id"]."'");
                     $stmt->bind_param("ssss", $first_name, $last_name, $email, $password);
                     $first_name = $_POST["firstname"];
                     $last_name = $_POST["lastname"];
@@ -20,7 +20,7 @@ $response = array();
                     $response['message'] = "Password and Confirm Password don't match!";
                 }
             }else{
-                $stmt = $conn->prepare("UPDATE Students SET firstname = ?, lastname = ?, email = ? WHERE id = '".$_POST["profile-id"]."'");
+                $stmt = $conn->prepare("UPDATE accounts SET firstname = ?, lastname = ?, email = ? WHERE id = '".$_POST["profile-id"]."'");
                 $stmt->bind_param("sss", $first_name, $last_name, $email);
                 $first_name = $_POST["firstname"];
                 $last_name = $_POST["lastname"];
@@ -34,7 +34,7 @@ $response = array();
             }
         }else{
             if($_POST["password"] == $_POST["confirm-password"]){
-                $stmt = $conn->prepare("INSERT INTO students (firstname, lastname,  username, email, password) VALUES (?, ?, ?, ?, ?)");
+                $stmt = $conn->prepare("INSERT INTO accounts (firstname, lastname,  username, email, password) VALUES (?, ?, ?, ?, ?)");
                 $stmt->bind_param("sssss", $first_name, $last_name, $username, $email, $password);
                 $first_name = $_POST["firstname"];
                 $last_name = $_POST["lastname"];

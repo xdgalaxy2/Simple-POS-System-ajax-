@@ -3,7 +3,7 @@ session_start();
 require '../mysql-connect.php';
 
 // sql to delete a record
-$sql = "DELETE FROM students WHERE id=".$_POST['id'];
+$sql = "DELETE FROM accounts WHERE id=".$_POST['id'];
 
 if ($conn->query($sql) === TRUE) {
     $response['message'] = "Record deleted successfully!";

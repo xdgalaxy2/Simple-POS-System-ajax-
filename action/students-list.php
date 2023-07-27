@@ -9,7 +9,7 @@ if($_POST['search']){
   $where="";
 }
 
-$sql = "SELECT * FROM students WHERE id != ".$_SESSION['user_id']." $where ORDER BY lastname";
+$sql = "SELECT * FROM accounts WHERE id != ".$_SESSION['user_id']." $where ORDER BY lastname";
 
 $result = $conn->query($sql);
 
