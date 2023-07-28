@@ -70,8 +70,8 @@ if(empty($_SESSION['user_id'])){
             $page = "";
         }
          switch($page){
-            case "product":
-                require "products.php";
+            case "menu":
+                require "menu.php";
             break;
 
             case "profile":

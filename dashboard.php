@@ -11,7 +11,7 @@
                     </tr>
                 </thead>
                 <!-- List Loop -->
-                <tbody id="user-list"><tbody>
+                <tbody id="order-list"><tbody>
             </table>
         </div>
     <?php }
