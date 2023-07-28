@@ -1,5 +1,45 @@
 $(function(){
 
+    
+
+    loadOrderLists();
+
+    $(".search-order").on('keyup',function(e) {
+            loadOrderLists();
+            
+    });
+
+    function loadOrderLists(){
+
+        var search = $(".search-order").val();
+
+        $.ajax({
+            type        : 'POST',  
+            url         : 'action/order-list.php',
+            data        : {search:search}, // data : $('#form_ID').serialize() or data : {var1:val1,var2:val2}
+            dataType    : 'html',  //  xml, html, script, json, text
+            beforeSend : function() {
+              
+            },
+            //is called when the server returns success status code, like: 200, 201
+            success:function(data){   
+                //console.log(data);
+           
+                $('#order-list').html(data);
+               
+            },
+            // is called always when the request is complete. (no matter, it is success/error response from server.)
+            complete : function(data,status) {
+                //console.log(data.responseText);
+            },
+            error:function (xhr, ajaxOptions, thrownError){
+                console.log(xhr.responseText);
+            }
+        });
+    }
+
+
+
     loadUserLists();
 
     
