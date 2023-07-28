@@ -37,82 +37,59 @@ if(empty($_SESSION['user_id'])){
     </head>
     <body>
 
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="?page=dashboard"><img src="assets/images/FU_logo.png" width="80"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link <?php if($_GET['page']=='menu') echo 'active'; ?>" aria-current="page" href="?page=menu">MENU</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link <?php if($_GET['page']=='profile') echo 'active'; ?>" href="?page=profile">USERS</a>
+                </li>
+              </ul>
+              <form class="d-flex">
+                <input class="form-control me-2 search-user" name="search" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+            </div>
+          </div>
+        </nav>
+
 
        <?php echo 'Welcome '.$_SESSION['fulname'].'!'; ?> <a href="#" id="logout-user">Logout</a>
-       <?php if ($_SESSION['admin']==1) {?>
-        <div class=" mt-5">
-            <b>USER LIST</b>
 
-            <div style="padding: 6px;" >
-                <button type="button" data-toggle="modal" data-target="#profileModal" class="btn btn-primary" name="add-user" id="add-profile" >Add User</button>                      
-            
-            </div>
-            
- 
-            <div class="search-wrapper">
-                        <div class="form-section"><input type="text" value="" name="search" class="form-control search-user" placeholder="Search"></div>
-            </div>
-            <table class="table  table-striped">
-                <thead>
-                    <tr>
-                        <td scope="col">ID</td><td scope="col">Name</td><td scope="col">Email</td><td scope="col">Action</td>
-                    </tr>
-                </thead>
-                <!-- List Loop -->
-                <tbody id="user-list"><tbody>
-            </table>
-        </div>
-    <?php }?>
+       <?php
+        if(isset($_GET['page'])){
+            $page = $_GET['page'];
+        }else{
+            $page = "";
+        }
+         switch($page){
+            case "product":
+                require "products.php";
+            break;
 
-        
-        <!-- Profile Modal -->
-        <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="profileModalLabel">Update Profile</h5>
-                </div>
+            case "profile":
+                require "profile.php";
+            break;
+
+            case "stock":
+                require "stock.php";
+            break;
+            case "profile":
+                require "profile.php";
+            break;
+
+            default:
+                require "dashboard.php";
                 
-                <div class="modal-body">
-                    <form id="update-profile">
-                    <input type="hidden" value="" id="profile-id" name="profile-id">
-                    <div class="mb-3">
-                        <label for="firstname" class="col-form-label">First Name:</label>
-                        <input type="text" class="form-control" name="firstname" id="firstname">
-                    </div>
-                    <div class="mb-3">
-                        <label for="lastname" class="col-form-label">Last Name:</label>
-                        <input type="text" class="form-control" name="lastname" id="lastname">
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="col-form-label">Email:</label>
-                        <input type="text" class="form-control" name="email" id="email">
-                    </div>
-                    
-                    <div class="mb-3 username-wrapper">
-                        <label for="username" class="col-form-label">Username:</label>
-                        <input type="text" class="form-control" name="username" id="username">
-                    </div>
-                    <div class="mb-3 password-wrapper" >
-                        <label for="password" class="col-form-label">Password: <span class = "optional">(optional)</span></label>
-                        <input type="password" class="form-control" name="password" id="password">
-                    </div>
-                    <div class="mb-3 password-wrapper">
-                        <label for="confirm-password" class="col-form-label">Confirm Password: <span class = "optional">(optional)</span></label>
-                        <input type="password" class="form-control" name="confirm-password" id="confirm-password">
-                    </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" id = "save-profile">Save</button>
-                </div>
-
-            </div>
-        </div>
-
-        
-
+         }
+        ?>
 
     </body>
 </html>
