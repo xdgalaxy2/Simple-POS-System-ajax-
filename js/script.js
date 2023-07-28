@@ -236,15 +236,10 @@ $(function(){
 
     })
 
-    
-    $(".search-user").on('keypress',function(e) {
-        if(e.which == 13) {
-            loadUserLists();
-        }
-    });
 
     $(".search-user").on('keyup',function(e) {
             loadUserLists();
+            
     });
 
     function loadUserLists(){

@@ -12,11 +12,16 @@ if(empty($_SESSION['user_id'])){
     <head>
         <title>jQuery, Ajax, PHP, MySQL</title>
 
-        <!-- jQuery -->    
+         <!-- jQuery -->    
         <script src="lib/jquery.min.js"></script>
-
+    
         <!-- bootstrap -->
+        <!-- 
+            https://getbootstrap.com/docs/5.0/getting-started/introduction/    
+            icons: https://icons.getbootstrap.com/  
+        -->
         <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+        <script src="lib/bootstrap/js/popper.min.js"></script>
         <script src="lib/bootstrap/js/bootstrap.min.js"></script>
         
 
