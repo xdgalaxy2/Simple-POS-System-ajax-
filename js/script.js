@@ -37,7 +37,7 @@ $(function(){
                             'success'
                           )
 
-                        //loadUserLists();
+                        loadUserLists();
         
                     }else{
                         
