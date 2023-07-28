@@ -1,15 +1,13 @@
  <?php if ($_SESSION['admin']==1) {?>
         <div class=" mt-5">
-            <b>USER LIST</b>
+            <b><p align="center">ORDER LIST</p></b>
 
-            <div style="padding: 6px;" >
-                <button type="button" data-toggle="modal" data-target="#profileModal" class="btn btn-primary" name="add-user" id="add-profile" >Add Menu</button>                      
-            
             </div>
             <table class="table  table-striped">
                 <thead>
                     <tr>
-                        <td scope="col">ID</td><td scope="col">Name</td><td scope="col">Email</td><td scope="col">Action</td>
+                        <br>              
+                        <td scope="col">ID</td><td scope="col">date_order</td><td scope="col">deleviry_date</td><td scope="col">delivery_address</td><td scope="col">delivery_time</td><td scope="col">contact_number</td>
                     </tr>
                 </thead>
                 <!-- List Loop -->
