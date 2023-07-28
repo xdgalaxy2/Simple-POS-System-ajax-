@@ -13,7 +13,7 @@
                     </tr>
                 </thead>
                 <!-- List Loop -->
-                <tbody id="user-list"><tbody>
+                <tbody id="menu-list"><tbody>
             </table>
         </div>
     <?php }
