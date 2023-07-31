@@ -1,5 +1,6 @@
 <?php
 session_start();
+error_reporting(0);
 require 'mysql-connect.php';
 
 if(empty($_SESSION['user_id'])){
@@ -55,8 +56,8 @@ if(empty($_SESSION['user_id'])){
                   <a class="nav-link <?php if($_GET['page']=='profile') echo 'active'; ?>" href="?page=profile">USERS</a>
                 </li>
               </ul>
-              <form class="d-flex">
-                <input class="form-control me-2 search-user" name="search" type="search" placeholder="Search" aria-label="Search">
+              <form id="<?php echo ($_GET['page'])?$_GET['page']:'dashboard'; ?>-search" class="d-flex">
+                <input class="form-control me-2 <?php echo ($_GET['page'])?$_GET['page']:'dashboard'; ?>-search" name="search" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
               </form>
             </div>

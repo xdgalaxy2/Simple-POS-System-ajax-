@@ -4,14 +4,14 @@ $(function(){
 
     loadOrderLists();
 
-    $(".search-order").on('keyup',function(e) {
+    $(".dashboard-search").on('keyup',function(e) {
             loadOrderLists();
             
     });
 
     function loadOrderLists(){
 
-        var search = $(".search-order").val();
+        var search = $(".dashboard-search").val();
 
         $.ajax({
             type        : 'POST',  
@@ -276,15 +276,20 @@ $(function(){
 
     })
 
+    $("#profile-search").submit(function(e){
+        e.preventDefault();
+        loadUserLists();
+    });
 
-    $(".search-user").on('keyup',function(e) {
+    $(".profile-search").on('keyup',function(e) {
+     
             loadUserLists();
             
     });
 
     function loadUserLists(){
 
-        var search = $(".search-user").val();
+        var search = $(".profile-search").val();
 
         $.ajax({
             type        : 'POST',  
