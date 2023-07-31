@@ -59,4 +59,4 @@ if ($stmt) {
 
 // Close the connection
 $conn->close();
-?>
+
