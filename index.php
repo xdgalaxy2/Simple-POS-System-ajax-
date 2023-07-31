@@ -57,7 +57,7 @@ if(empty($_SESSION['user_id'])){
                 </li>
               </ul>
               <form id="<?php echo ($_GET['page'])?$_GET['page']:'dashboard'; ?>-search" class="d-flex">
-                <input class="form-control me-2 <?php echo ($_GET['page'])?$_GET['page']:'dashboard'; ?>-search" name="search" type="search" placeholder="Search" aria-label="Search">
+                    <input class="form-control me-2 <?php echo ($_GET['page'])?$_GET['page']:'dashboard'; ?>-search" name="search" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
               </form>
             </div>
