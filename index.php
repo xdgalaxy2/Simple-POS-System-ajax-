@@ -64,7 +64,6 @@ if(empty($_SESSION['user_id'])){
           </div>
         </nav>
 
-
        <?php echo 'Welcome '.$_SESSION['fulname'].'!'; ?> <a href="#" id="logout-user">Logout</a>
 
        <?php
@@ -82,8 +81,8 @@ if(empty($_SESSION['user_id'])){
                 require "profile.php";
             break;
 
-            case "stock":
-                require "stock.php";
+            case "order-details":
+                require "order-details.php";
             break;
             case "profile":
                 require "profile.php";
