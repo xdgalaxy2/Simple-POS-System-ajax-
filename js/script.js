@@ -327,6 +327,58 @@ $(function(){
 
 
 
+     $(document).on('click', '.add-order', function(e){
+        e.preventDefault();
+        
+        var id = $(this).attr("data-id");
+
+            
+                $.ajax({
+                    type        : 'POST',  
+                    url         : 'action/add-order.php',
+                    data        : {id:id}, // data : $('#form_ID').serialize() or data : {var1:val1,var2:val2}
+                    dataType    : 'json',  //  xml, html, script, json, text
+                    beforeSend : function() {
+                    
+                    },
+                    //is called when the server returns success status code, like: 200, 201
+                    success:function(data){   
+                        //console.log(data);
+                    if(data.message=='Order added'){
+                        
+                        Swal.fire(
+                            'Order',
+                            'Order Added',
+                            'success'
+                          )
+
+                        loadMenuList();
+        
+                    }else{
+                        
+                        Swal.fire(
+                            'Delete',
+                            'Failed to delete user record!',
+                            'error'
+                          )
+                        
+                    }
+                        
+                    
+                    },
+                    // is called always when the request is complete. (no matter, it is success/error response from server.)
+                    complete : function(data,status) {
+                        //console.log(data.responseText);
+                    },
+                    error:function (xhr, ajaxOptions, thrownError){
+                        console.log(xhr.responseText);
+                    }
+                });
+            
+
+          })
+
+
 
 
     $("#profile-search").submit(function(e){

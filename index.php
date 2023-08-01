@@ -7,6 +7,8 @@ if(empty($_SESSION['user_id'])){
     header("Location: login.php", true, 301);
     exit();
 }
+
+
 ?>
 <!DOCTYPE html>
 <html>

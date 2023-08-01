@@ -43,7 +43,7 @@ if ($result->num_rows > 0) {
                     </div>
                 </div>
                  <?php }else{ ?>
-                            <a href="#" class="add-order text-danger small"
+                            <a href="#" class="add-order text-primary small"
                             data-id="<?php echo $row['id']; ?>">ADD ORDER</a>
 
                 <?php } ?>
