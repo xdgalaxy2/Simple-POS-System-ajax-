@@ -388,40 +388,51 @@ $(function(){
 
         });
 
-        // Edit Profile add value to form fields
-        $('#profileModal').on('show.bs.modal', function (event) {
-            var button = $(event.relatedTarget); // Button that triggered the modal
-            var firstname = button.data('fname'); // Extract info from data-* attributes
-            var lastname = button.data('lname');
-            var id = button.data('id');
-            var email = button.data('email');
-            var username = button.data('username');
-            // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-            // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-            var modal = $(this);
-            if(id){
-            modal.find('.modal-body #profile-id').val(id);
-            modal.find('.modal-body #firstname').val(firstname);
-            modal.find('.modal-body #lastname').val(lastname);
-            modal.find('.modal-body #email').val(email);
-            modal.find('.modal-body #username').val(username);
+       // Edit Profile add value to form fields
+$('#profileModal').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget); // Button that triggered the modal
+    var firstname = button.data('fname'); // Extract info from data-* attributes
+    var lastname = button.data('lname');
+    var id = button.data('id');
+    var email = button.data('email');
+    var username = button.data('username');
 
-            modal.find('.modal-body #username').prop('disabled', true);
+    // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+    var modal = $(this);
+    if (id) {
+        modal.find('.modal-body #profile-id').val(id);
+        modal.find('.modal-body #firstname').val(firstname);
+        modal.find('.modal-body #lastname').val(lastname);
+        modal.find('.modal-body #email').val(email);
+        modal.find('.modal-body #username').val(username);
 
-            modal.find('.modal-header #profileModalLabel').html("Update Profile");
-            modal.find('.modal-body .optional').show();
-            }else{
-                modal.find('.modal-body .optional').hide();
-                modal.find('.modal-body #profile-id').val("");
-                modal.find('.modal-body #firstname').val("");
-                modal.find('.modal-body #lastname').val("");
-                modal.find('.modal-body #email').val("");
-                modal.find('.modal-body #username').val("");
-    
-                modal.find('.modal-body #username').prop('disabled', false);
+        modal.find('.modal-body #username').prop('disabled', true);
 
-                modal.find('.modal-header #profileModalLabel').html("Add Profile");
-            }
-        })
+        modal.find('.modal-header #profileModalLabel').html("Update Profile");
+        modal.find('.modal-body .optional').show();
+    } else {
+        modal.find('.modal-body .optional').hide();
+        modal.find('.modal-body #profile-id').val("");
+        modal.find('.modal-body #firstname').val("");
+        modal.find('.modal-body #lastname').val("");
+        modal.find('.modal-body #email').val("");
+        modal.find('.modal-body #username').val("");
+
+        modal.find('.modal-body #username').prop('disabled', false);
+
+        modal.find('.modal-header #profileModalLabel').html("Add Profile");
+    }
+
+    // Below, there's an issue with the closing parenthesis for the if-else statement
+    if (id) {
+        modal.find('.modal-header #MenuLabel').html("Update Profile");
+        modal.find('.modal-body .optional').show();
+    } else {
+        modal.find('.modal-body #description').val("");
+        modal.find('.modal-body #Price').val("");
+        modal.find('.modal-header #MenuLabel').html("Add Menu");
+    }
+});
+
     }
 );
