@@ -19,7 +19,7 @@ if(empty($_SESSION['user_id'])){
         <!-- bootstrap -->
         <!-- 
             https://getbootstrap.com/docs/5.0/getting-started/introduction/    
-            icons: https://icons.getbootstrap.com/  
+            icons:    
         -->
         <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
         <script src="lib/bootstrap/js/popper.min.js"></script>
@@ -49,17 +49,25 @@ if(empty($_SESSION['user_id'])){
                 <li class="nav-item">
                   <a class="nav-link <?php if($_GET['page']=='dashboard') echo 'active'; ?>" aria-current="page" href="?page=dashboard">DASHBOARD</a>
                 </li>
+                
                 <li class="nav-item">
                   <a class="nav-link <?php if($_GET['page']=='menu') echo 'active'; ?>" aria-current="page" href="?page=menu">MENU</a>
                 </li>
+                <?php if($_SESSION['admin']){ ?>
                 <li class="nav-item">
                   <a class="nav-link <?php if($_GET['page']=='profile') echo 'active'; ?>" href="?page=profile">USERS</a>
                 </li>
+               <?php  } ?>
               </ul>
+              <svg id="view-order" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart2 me-4" viewBox="0 0 16 16">
+                  <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+                </svg>
               <form id="<?php echo ($_GET['page'])?$_GET['page']:'dashboard'; ?>-search" class="d-flex">
                     <input class="form-control me-2 <?php echo ($_GET['page'])?$_GET['page']:'dashboard'; ?>-search" name="search" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
               </form>
+
+
             </div>
           </div>
         </nav>

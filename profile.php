@@ -16,13 +16,7 @@
                 <tbody id="user-list"><tbody>
             </table>
         </div>
-    <?php }
-        else{
-
-        }
-
-    ?>
-            
+   
 
 
 <!-- Profile Modal -->
@@ -69,3 +63,14 @@
         </div>
     </div>
 </div>
+
+  <?php }
+        else{
+             ?> "
+
+             <div align="center">access denied</div>
+
+             <?php
+        }
+
+    ?>

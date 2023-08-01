@@ -23,5 +23,11 @@
 
     ?>
 
-        
+<script type="text/javascript">
+    $(function(){
+
+
+    loadMenuList();
+});
+</script>
 
