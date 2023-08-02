@@ -1,3 +1,7 @@
+<h1 align="center">About Us</h1>
+<div align="center"><p>qwertyuioasdfghjklzxcvbnm,.mnbvcxzlkjhgdsapoiuytrewq</p></div>
+
+
  <?php if ($_SESSION['admin']==1) {?>
         <div class=" mt-5">
             <b><p align="center">ORDER LIST</p></b>
@@ -58,3 +62,4 @@
         </div>
     </div>
 </div>
+
