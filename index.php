@@ -42,7 +42,7 @@ if(empty($_SESSION['user_id'])){
 
         <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
           <div class="container-fluid">
-            <a class="navbar-brand" href="?page=dashboard"><img src="assets/images/FU_logo.png" width="80"></a>
+            <a class="navbar-brand" <?php if($_GET['page']=='dashboard') echo 'active'; ?> href="?page=dashboard"><img src="assets/images/FU_logo.png" width="80"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -77,13 +77,7 @@ if(empty($_SESSION['user_id'])){
         </nav>
 
        <?php echo 'Welcome '.$_SESSION['fulname'].'!'; ?> <a href="#" id="logout-user">Logout</a>
-       <?php if ($_SESSION['admin']==0) {?>
-       <br><br>
-        <h1 align="center">About Us</h1>
-        <div align="center"><p class="intro"> Welcome to a world where event planning is no longer a daunting task, but a delightful journey of creativity and convenience. In today's fast-paced and interconnected digital age, traditional methods of organizing catering services for events have been transformed by the emergence of the Online Catering Reservation System. This innovative platform has revolutionized the way we plan and execute gatherings, offering a seamless and efficient experience for hosts and guests alike.
-        <br><br>
-        In this exploration, we delve into the remarkable world of the Online Catering Reservation System, where the stress and uncertainty of catering arrangements become a thing of the past. Join us as we uncover the key features and advantages of this game-changing technology, providing you with insights on how it simplifies the event planning process for individuals, businesses, and organizations of all sizes.</p></div>
-    <?php } ?>
+       
        <?php
         if(isset($_GET['page'])){
             $page = $_GET['page'];
@@ -102,8 +96,8 @@ if(empty($_SESSION['user_id'])){
             case "order-details":
                 require "order-details.php";
             break;
-            case "profile":
-                require "profile.php";
+            case "index":
+                require "index.php";
             break;
 
             default:

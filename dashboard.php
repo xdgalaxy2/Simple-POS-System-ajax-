@@ -22,6 +22,13 @@
         }
 
     ?>
+    <?php if ($_SESSION['admin']==0) {?>
+       <br><br>
+        <h1 align="center">About Us</h1>
+        <div align="center"><p class="intro"> Welcome to a world where event planning is no longer a daunting task, but a delightful journey of creativity and convenience. In today's fast-paced and interconnected digital age, traditional methods of organizing catering services for events have been transformed by the emergence of the Online Catering Reservation System. This innovative platform has revolutionized the way we plan and execute gatherings, offering a seamless and efficient experience for hosts and guests alike.
+        <br><br>
+        In this exploration, we delve into the remarkable world of the Online Catering Reservation System, where the stress and uncertainty of catering arrangements become a thing of the past. Join us as we uncover the key features and advantages of this game-changing technology, providing you with insights on how it simplifies the event planning process for individuals, businesses, and organizations of all sizes.</p></div>
+    <?php } ?>
 
 
 <!-- Profile Modal -->
