@@ -334,6 +334,12 @@ form .btn input[type="submit"]{
 
 }
 
+.intro{
+  box-sizing: border-box;
+  width: 1200px;
+  padding-bottom: 30px;
+}
+
 
 
 

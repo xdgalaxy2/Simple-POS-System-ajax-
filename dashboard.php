@@ -1,8 +1,4 @@
-<h1 align="center">About Us</h1>
-<div align="center"><p>qwertyuioasdfghjklzxcvbnm,.mnbvcxzlkjhgdsapoiuytrewq</p></div>
-
-
- <?php if ($_SESSION['admin']==1) {?>
+<?php if ($_SESSION['admin']==1) {?>
         <div class=" mt-5">
             <b><p align="center">ORDER LIST</p></b>
         <div style="padding: 6px;" >
@@ -26,6 +22,7 @@
         }
 
     ?>
+
 
 <!-- Profile Modal -->
 <div class="modal fade" id="OrderModal" tabindex="-1" aria-labelledby="OrderLabel" aria-hidden="true">
