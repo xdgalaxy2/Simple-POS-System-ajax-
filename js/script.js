@@ -526,7 +526,7 @@ $(function(){
 
 
 
-           // Edit Profile add value to form fields
+           // Edit menu add value to form fields
     $('#MenuModal').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget); // Button that triggered the modal
         var description = button.data('description'); // Extract info from data-* attributes
@@ -552,6 +552,33 @@ $(function(){
 
     });
 
+
+
+           // Edit menu add value to form fields
+    $('#OrderModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget); // Button that triggered the modal
+        var delivery_date = button.data('deliverydate'); // Extract info from data-* attributes
+        var delivery_time = button.data('deliverytime');
+        var delivery_address = button.data('deliveryaddress');
+        var contact_number = button.data('contactnumber');
+        var id = button.data('id');
+
+        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+        var modal = $(this);
+        if (id) {
+            modal.find('.modal-body #order-id').val(id);
+            modal.find('.modal-body #delivery_date').val(description); // Use the 'description' variable here
+            modal.find('.modal-body #delivery_time').val(price); // Use the 'price' variable here
+
+            modal.find('.modal-header #OrderLabel').html("Update Order");
+        } else {
+            modal.find('.modal-body #order-id').val("");
+            modal.find('.modal-body #delivery_date').val("");
+            modal.find('.modal-body #delivery_time').val("");
+
+            modal.find('.modal-header #OrderLabel').html("Add Order");
+        }
+    });
 
 });
 

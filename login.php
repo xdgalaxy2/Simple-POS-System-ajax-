@@ -62,7 +62,7 @@ if(!empty($_SESSION['user_id'])){
           <form id="login-form" class="login" method="post">
             <div class="field">
               <div id="login-message" class=""></div>
-               <input type="text" class="form-control" name="username" placeholder="ID number" required>
+               <input type="text" class="form-control" name="username" placeholder="Username" required>
             </div>
             <div class="field">
                <input type="password" class="form-control" name="password" placeholder="Password" required>
