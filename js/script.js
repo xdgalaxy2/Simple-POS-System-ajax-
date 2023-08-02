@@ -1,6 +1,6 @@
 $(function(){
 
-    $(".dashboard-search").on('keyup',function(e) {
+    $(".menu-search").on('keyup',function(e) {
             loadMenuList();
             
     });
@@ -8,7 +8,7 @@ $(function(){
    
     loadOrderDetails();
 
-    $(".dashboard-search").on('keyup',function(e) {
+    $(".order-details-search").on('keyup',function(e) {
             loadOrderDetails();
             
     });
@@ -17,7 +17,7 @@ $(function(){
 
     loadOrderLists();
 
-    $(".dashboard-search").on('keyup',function(e) {
+    $(".order-list-search").on('keyup',function(e) {
             loadOrderLists();
             
     });
@@ -560,7 +560,7 @@ $(function(){
 
  function loadMenuList(){
 
-        var search = $(".dashboard-search").val();
+        var search = $(".menu-search").val();
 
         $.ajax({
             type        : 'POST',  
@@ -589,7 +589,7 @@ $(function(){
 
     function loadOrderLists(){
 
-        var search = $(".dashboard-search").val();
+        var search = $(".order-list-search").val();
 
         $.ajax({
             type        : 'POST',  
@@ -619,7 +619,7 @@ $(function(){
 
     function loadOrderDetails(){
 
-        var search = $(".dashboard-search").val();
+        var search = $(".order-details-search").val();
 
         $.ajax({
             type        : 'POST',  
