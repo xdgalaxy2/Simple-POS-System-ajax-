@@ -60,7 +60,7 @@ if ($stmt) {
                             data-contactnumber="<?php echo $row['contact_number'] ?>"
                             data-id="<?php echo $row['id'] ?>"
                             >EDIT</a>
-                        <a href="#" class="delete-menu dropdown-item text-danger small"
+                        <a href="#" class="delete-order dropdown-item text-danger small"
                             data-id="<?php echo $row['id']; ?>">DELETE</a>
                         
                     </div>
@@ -73,7 +73,7 @@ if ($stmt) {
     } else {
         ?>
         <tr>
-            <td scope="row" colspan="6">No Record Found.</td>
+            <td scope="row" colspan="7">No Record Found.</td>
         </tr>
         <?php
     }

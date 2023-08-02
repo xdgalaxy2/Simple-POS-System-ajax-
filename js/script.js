@@ -262,6 +262,72 @@ $(function(){
 
     })
 
+
+    $(document).on('click', '.delete-order', function(e){
+        e.preventDefault();
+        
+        var id = $(this).attr("data-id");
+
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+            
+                $.ajax({
+                    type        : 'POST',  
+                    url         : 'action/delete-order.php',
+                    data        : {id:id}, // data : $('#form_ID').serialize() or data : {var1:val1,var2:val2}
+                    dataType    : 'json',  //  xml, html, script, json, text
+                    beforeSend : function() {
+                    
+                    },
+                    //is called when the server returns success status code, like: 200, 201
+                    success:function(data){   
+                        //console.log(data);
+                    if(data.message=='Order deleted successfully!'){
+                        
+                        Swal.fire(
+                            'Deleted!',
+                            'Order record has been deleted.',
+                            'success'
+                          )
+
+                        loadOrderLists();
+        
+                    }else{
+                        
+                        Swal.fire(
+                            'Delete',
+                            'Failed to delete order record!',
+                            'error'
+                          )
+                        
+                    }
+                        
+                    
+                    },
+                    // is called always when the request is complete. (no matter, it is success/error response from server.)
+                    complete : function(data,status) {
+                        //console.log(data.responseText);
+                    },
+                    error:function (xhr, ajaxOptions, thrownError){
+                        console.log(xhr.responseText);
+                    }
+                });
+            }
+
+          })
+
+    })
+
+
+
     $(document).on('click', '.delete-menu', function(e){
         e.preventDefault();
         
@@ -487,6 +553,72 @@ $(function(){
 
     })
 
+
+     $("#update-orderdetails").click(function(e){
+        e.preventDefault();
+
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, update it!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+
+                $.ajax({
+                    type        : 'POST',  
+                    url         : 'action/update-orderdetails.php',
+                    data        : $('#form-menu').serialize() , // data : $('#form_ID').serialize() or data : {var1:val1,var2:val2}
+                    dataType    : 'json',  //  xml, html, script, json, text
+                    beforeSend : function() {
+                    
+                    },
+                    //is called when the server returns success status code, like: 200, 201
+                    success:function(data){  
+                        //console.log(data);
+                    if(data.message=='Order details updated successfully!' || data.message=='Order details added successfully!'){
+                        
+                        Swal.fire(
+                            'Profile!',
+                            data.message,
+                            'success'
+                          )
+
+                        loadOrderLists();
+        
+                    }else{
+                        
+                        Swal.fire(
+                            'Profile',
+                            data.message,
+                            'error'
+                          )
+                        
+                    }
+                        
+                    
+                    },
+                    // is called always when the request is complete. (no matter, it is success/error response from server.)
+                    complete : function(data,status) {
+                        console.log(data.responseText);
+                    },
+                    error:function (xhr, ajaxOptions, thrownError){
+                        console.log(xhr.responseText);
+                    }
+                });
+            }
+
+          })
+
+    })
+
+
+
+
+
            // Edit Profile add value to form fields
     $('#profileModal').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget); // Button that triggered the modal
@@ -567,17 +699,21 @@ $(function(){
         var modal = $(this);
         if (id) {
             modal.find('.modal-body #order-id').val(id);
-            modal.find('.modal-body #delivery_date').val(description); // Use the 'description' variable here
-            modal.find('.modal-body #delivery_time').val(price); // Use the 'price' variable here
+            modal.find('.modal-body #delivery_date').val(delivery_date);
+            modal.find('.modal-body #delivery_time').val(delivery_time);
+            modal.find('.modal-body #delivery_address').val(delivery_address);
+            modal.find('.modal-body #contact_number').val(contact_number);
+
 
             modal.find('.modal-header #OrderLabel').html("Update Order");
         } else {
             modal.find('.modal-body #order-id').val("");
-            modal.find('.modal-body #delivery_date').val("");
-            modal.find('.modal-body #delivery_time').val("");
-
+            modal.find('.modal-body #delivery_date').val(delivery_date);
+            modal.find('.modal-body #delivery_time').val(delivery_time);
+            modal.find('.modal-body #delivery_address').val(delivery_address);
+            modal.find('.modal-body #contact_number').val(contact_number);
             modal.find('.modal-header #OrderLabel').html("Add Order");
-        }
+        } 
     });
 
 });
