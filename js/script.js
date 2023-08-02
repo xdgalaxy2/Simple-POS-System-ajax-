@@ -418,7 +418,8 @@ $(function(){
                             'success'
                           )
 
-                        loadMenuList();
+                        //loadMenuList();
+                        $(".cart").html(data.cart);
         
                     }else{
                         

@@ -319,6 +319,18 @@ form .btn input[type="submit"]{
     }
 }
 
+.cart-wrapper{position: relative;}
+.cart{
+  position: absolute;
+    top: 0px;
+    left: 27px;
+    border: white;
+    
+    color: red;
+    font-weight: bold;
+
+}
+
 
 
 
