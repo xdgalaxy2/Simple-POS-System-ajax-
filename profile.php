@@ -3,7 +3,7 @@
             <b><p align="center">USER LIST</p></b>
 
             <div style="padding: 6px;" >
-                <button type="button" data-toggle="modal" data-target="#profileModal" class="btn btn-primary" name="add-user" id="add-profile" >Add User</button>                      
+                <button type="button" data-bs-toggle="modal" data-bs-target="#profileModal" class="btn btn-primary" name="add-user" id="add-profile" >Add User</button>                      
             
             </div>
             <table class="table  table-striped">
@@ -58,7 +58,7 @@
             </form>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary" id = "save-profile">Save</button>
         </div>
     </div>

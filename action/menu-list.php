@@ -24,8 +24,7 @@ if ($result->num_rows > 0) {
             <td scope="row">
               <?php if ($_SESSION['admin']==1) {?>
                 <div class="dropdown">
-                    <a class="text-secondary" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
+                    <a class="text-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                             class="bi bi-list" viewBox="0 0 16 16">
                             <path fill-rule="evenodd"
@@ -34,8 +33,8 @@ if ($result->num_rows > 0) {
                     </a>
                     <div class="dropdown-menu dropdown-menu-right " aria-labelledby="dropdownMenuLink">
                       
-                        <a href="#" class="edit-menu dropdown-item text-primary small" data-toggle="modal"
-                            data-target="#MenuModal" data-description="<?php echo $row['description'] ?>"
+                        <a href="#" class="edit-menu dropdown-item text-primary small" data-bs-toggle="modal"
+                            data-bs-target="#MenuModal" data-description="<?php echo $row['description'] ?>"
                             data-price="<?php echo $row['price'] ?>" data-id="<?php echo $row['id'] ?>">EDIT</a>
                         <a href="#" class="delete-menu dropdown-item text-danger small"
                             data-id="<?php echo $row['id']; ?>">DELETE</a>

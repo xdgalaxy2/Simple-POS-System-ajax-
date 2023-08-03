@@ -2,7 +2,7 @@
         <div class=" mt-5">
             <b><p align="center">ORDER LIST</p></b>
         <div style="padding: 6px;" >
-            <button type="button" data-toggle="modal" data-target="#OrderModal" class="btn btn-primary" name="add-user" id="add-profile" >Add Order</button>                  
+            <button type="button" data-bs-toggle="modal" data-bs-target="#OrderModal" class="btn btn-primary" name="add-order" id="add-order" >Add Order</button>                  
         </div>
             </div>
             <table class="table  table-striped">
@@ -61,7 +61,7 @@
         </form>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary" id = "update-orderdetails">Save</button>
         </div>
     </div>

@@ -3,7 +3,7 @@
 
     <?php if ($_SESSION['admin']==1) {?>
          <div style="padding: 6px;" >
-                <button type="button" data-toggle="modal" data-target="#MenuModal" class="btn btn-primary" >Add Menu</button>                      
+                <button type="button" data-bs-toggle="modal" data-bs-target="#MenuModal" class="btn btn-primary" >Add Menu</button>                      
             
             </div>
    
@@ -48,7 +48,7 @@
         </form>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary" id = "update-menu">Save</button>
         </div>
     </div>
