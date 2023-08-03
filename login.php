@@ -28,11 +28,18 @@ if(!empty($_SESSION['user_id'])){
         
         <style>
             body {
-                background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url('assets/images/bg.jpg');
-                background-size: cover;
-                background-repeat: no-repeat;
+                    width: 100vw;
+            height: 100vh;
+            background-image: url('assets/images/bg.jpg');
+            background-position: bottom;
+            background-size: cover;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
             }
         </style>
+
+        
 
 
 
