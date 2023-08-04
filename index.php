@@ -85,15 +85,49 @@ if(empty($_SESSION['user_id'])){
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="MenuLabel">Add Menu</h5>
+                    <h5 class="modal-title" id="MenuLabel">Cart</h5>
                 </div>
                 
                 <div class="modal-body">
-                  <div class="cart-list"></div>
+                
+                  <table class="table  table-striped">
+                      <thead>
+                          <tr>
+                              <td>Menu</td>
+                              <td>Price</td>
+                              <td>Quantity</td>
+                              <td>Total</td>
+                          </tr>
+                      </thead>
+                      <tbody class="cart-list">
+                          
+                      </tbody>
+                  </table>
+
+                  <form id="customer-details">
+                        <input type="hidden" value="" id="menu-id" name="menu-id">
+                        <div class="mb-3">
+                            <label for="delivery_date" class="col-form-label">Delivery Date:</label>
+                            <input type="text" class="form-control" name="delivery_date" id="delivery_date" value="2023-08-08">
+                        </div>
+                        <div class="mb-3">
+                            <label for="delivery_time" class="col-form-label">Delivery Time:</label>
+                            <input type="text" class="form-control" name="delivery_time" id="delivery_time" value="23:08:12">
+                        </div>
+                        <div class="mb-3">
+                            <label for="delivery_address" class="col-form-label">Delivery Address:</label>
+                            <input type="text" class="form-control" name="delivery_address" id="delivery_address" value="aaaaaaa">
+                        </div>
+                        <div class="mb-3">
+                            <label for="contact_number" class="col-form-label">Contact Number:</label>
+                            <input type="text" class="form-control" name="contact_number" id="contact_number" value="111111111">
+                        </div>
+                </form>
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" id = "update-menu">Submit Order</button>
+                    <button type="button" class="btn btn-primary" id = "submit-order">Submit Order</button>
                 </div>
             </div>
         </div>     

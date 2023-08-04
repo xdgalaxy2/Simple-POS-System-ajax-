@@ -555,6 +555,77 @@ $(function(){
     })
 
 
+     $("#submit-order").click(function(e){
+        e.preventDefault();
+        //alert();
+
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, update it!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+            
+                $.ajax({
+                    type        : 'POST',  
+                    url         : 'action/submit-order.php',
+                    data        : $('#customer-details').serialize() , // data : $('#form_ID').serialize() or data : {var1:val1,var2:val2}
+                    dataType    : 'json',  //  xml, html, script, json, text
+                    beforeSend : function() {
+                    
+                    },
+                    //is called when the server returns success status code, like: 200, 201
+                    success:function(data){   
+                        
+                        console.log(data);
+                    if(data.message=='Successfully submited order!'){
+
+                        $(".cart").html(0);
+
+                        Swal.fire(
+                            'Profile!',
+                            data.message,
+                            'success'
+                          )
+
+                        loadMenuList();
+        
+                    }else{
+                        
+                        Swal.fire(
+                            'Profile',
+                            data.message,
+                            'error'
+                          )
+                        
+                    }
+                        
+                    
+                    },
+                    // is called always when the request is complete. (no matter, it is success/error response from server.)
+                    complete : function(data,status) {
+                        console.log(data.responseText);
+                    },
+                    error:function (xhr, ajaxOptions, thrownError){
+                        console.log(xhr.responseText);
+                        
+                    }
+                });
+            }
+
+          })
+
+    })
+
+
+
+
+
+
      $("#update-orderdetails").click(function(e){
         e.preventDefault();
 
