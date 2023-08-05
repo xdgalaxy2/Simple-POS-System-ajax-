@@ -42,7 +42,7 @@ if ($stmt) {
                 <td scope="row"><?php echo $row['contact_number']; ?></td>
                 <td scope="row">
                     <div class="dropdown">
-                    <a class="text-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="text-secondary dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                             class="bi bi-list" viewBox="0 0 16 16">
                             <path fill-rule="evenodd"
