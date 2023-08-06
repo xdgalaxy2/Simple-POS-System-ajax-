@@ -6,9 +6,9 @@ require '../mysql-connect.php';
 $sql = "DELETE FROM accounts WHERE id=".$_POST['id'];
 
 if ($conn->query($sql) === TRUE) {
-    $response['message'] = "Record deleted successfully!";
+    $response['message'] = "User profile deleted successfully!";
 } else {
-    $response['message'] = "Error deleting record: " . $conn->error;
+    $response['message'] = "Error deleting user profile: " . $conn->error;
 }
 
 $conn->close();

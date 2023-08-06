@@ -28,12 +28,11 @@ $(function(){
 
         Swal.fire({
             title: 'Are you sure?',
-            text: "You won't be able to revert this!",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, update it!'
+            confirmButtonText: 'Yes!'
           }).then((result) => {
             if (result.isConfirmed) {
             
@@ -48,7 +47,7 @@ $(function(){
                     //is called when the server returns success status code, like: 200, 201
                     success:function(data){   
                         //console.log(data);
-                    if(data.message=='Record update successfully!' || data.message=='Record add successfully!'){
+                    if(data.message=='User profile updated successfully!' || data.message=='User profile added successfully!'){
                         
                         Swal.fire(
                             'Profile!',
@@ -219,11 +218,11 @@ $(function(){
                     //is called when the server returns success status code, like: 200, 201
                     success:function(data){   
                         //console.log(data);
-                    if(data.message=='Record deleted successfully!'){
+                    if(data.message=='User profile deleted successfully!'){
                         
                         Swal.fire(
                             'Deleted!',
-                            'User record has been deleted.',
+                            'User profile has been deleted.',
                             'success'
                           )
 
@@ -233,7 +232,7 @@ $(function(){
                         
                         Swal.fire(
                             'Delete',
-                            'Failed to delete user record!',
+                            'Failed to delete user profile!',
                             'error'
                           )
                         
@@ -441,11 +440,6 @@ $(function(){
 
 
 
-    $("#profile-search").submit(function(e){
-        e.preventDefault();
-        loadUserLists();
-    });
-
     $(".profile-search").on('keyup',function(e) {
      
             loadUserLists();
@@ -553,12 +547,11 @@ $(function(){
 
         Swal.fire({
             title: 'Are you sure?',
-            text: "You won't be able to revert this!",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, update it!'
+            confirmButtonText: 'Yes!'
           }).then((result) => {
             if (result.isConfirmed) {
             
@@ -579,7 +572,7 @@ $(function(){
                         $(".cart").html(0);
 
                         Swal.fire(
-                            'Profile!',
+                            'Order Submited!',
                             data.message,
                             'success'
                           )
@@ -589,7 +582,7 @@ $(function(){
                     }else{
                         
                         Swal.fire(
-                            'Profile',
+                            'Order',
                             data.message,
                             'error'
                           )

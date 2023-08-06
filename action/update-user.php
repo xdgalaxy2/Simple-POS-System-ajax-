@@ -27,7 +27,7 @@ $response = array();
             }
     
             if ($stmt->execute()) {
-                $response['message'] = "Record update successfully!";
+                $response['message'] = "User profile updated successfully!";
             } else {
                 $response['message'] = "Update error: " . $conn->error;
             }
@@ -43,7 +43,7 @@ $response = array();
                 
             
                 if ($stmt->execute()) {
-                    $response['message'] = "Record add successfully!";
+                    $response['message'] = "User profile added successfully!";
                 } else {
                     $response['message'] = "Add error: " . $conn->error;
                 }
