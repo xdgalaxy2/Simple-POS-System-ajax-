@@ -352,7 +352,7 @@ $(function(){
                         
                         Swal.fire(
                             'Deleted!',
-                            'User record has been deleted.',
+                            'Menu record has been deleted.',
                             'success'
                           )
 
@@ -362,7 +362,7 @@ $(function(){
                         
                         Swal.fire(
                             'Delete',
-                            'Failed to delete user record!',
+                            'Failed to delete menu record!',
                             'error'
                           )
                         
@@ -491,12 +491,11 @@ $(function(){
 
         Swal.fire({
             title: 'Are you sure?',
-            text: "You won't be able to revert this!",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, update it!'
+            confirmButtonText: 'Yes'
           }).then((result) => {
             if (result.isConfirmed) {
             
@@ -514,7 +513,7 @@ $(function(){
                     if(data.message=='Menu updated successfully!' || data.message=='Menu item created successfully!'){
                         
                         Swal.fire(
-                            'Profile!',
+                            'Menu!',
                             data.message,
                             'success'
                           )
@@ -524,7 +523,7 @@ $(function(){
                     }else{
                         
                         Swal.fire(
-                            'Profile',
+                            'Menu',
                             data.message,
                             'error'
                           )
@@ -831,7 +830,7 @@ $(function(){
             success:function(data){   
                 //console.log(data);
            
-                $('#menu-list   ').html(data);
+                $('#menu-list').html(data);
                
             },
             // is called always when the request is complete. (no matter, it is success/error response from server.)
