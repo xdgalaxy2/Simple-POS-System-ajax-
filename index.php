@@ -150,9 +150,6 @@ if(empty($_SESSION['user_id'])){
                 require "profile.php";
             break;
 
-            case "order-details":
-                require "order-details.php";
-            break;
             case "index":
                 require "index.php";
             break;
