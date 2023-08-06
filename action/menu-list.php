@@ -53,7 +53,7 @@ if ($result->num_rows > 0) {
 } else {
     ?>
     <tr>
-        <td scope="row" colspan="3">No Record Found.</td>
+        <td scope="row" colspan="4">No Record Found.</td>
     </tr>
 <?php
 }
