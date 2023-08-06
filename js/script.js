@@ -112,7 +112,7 @@ $(function(){
                 setTimeout(
                     function() 
                     {
-                        $(window).attr('location','/ajax/');
+                        $(window).attr('location','/ajax/?page=dashboard');
                     }, 1500);
 
             }else{
