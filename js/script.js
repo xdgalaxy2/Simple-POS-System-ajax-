@@ -10,7 +10,7 @@ $(function(){
 
     loadOrderLists();
 
-    $(".order-list-search").on('keyup',function(e) {
+    $(".dashboard-search").on('keyup',function(e) {
             loadOrderLists();
             
     });
@@ -838,7 +838,7 @@ $(function(){
 
     function loadOrderLists(){
 
-        var search = $(".order-list-search").val();
+        var search = $(".dashboard-search").val();
 
         $.ajax({
             type        : 'POST',  
