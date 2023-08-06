@@ -1,10 +1,7 @@
 <?php if ($_SESSION['admin']==1) {?>
         <div class=" mt-5">
             <b><p align="center">ORDER LIST</p></b>
-        <div style="padding: 6px;" >
-            <button type="button" data-bs-toggle="modal" data-bs-target="#OrderModal" class="btn btn-primary" name="add-order" id="add-order" >Add Order</button>                  
         </div>
-            </div>
             <table class="table  table-striped">
                 <thead>
                     <tr>

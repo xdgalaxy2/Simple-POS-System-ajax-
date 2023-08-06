@@ -654,7 +654,7 @@ $(function(){
                     if(data.message=='Order details updated successfully!' || data.message=='Order details added successfully!'){
                         
                         Swal.fire(
-                            'Profile!',
+                            'Order details!',
                             data.message,
                             'success'
                           )
@@ -664,7 +664,7 @@ $(function(){
                     }else{
                         
                         Swal.fire(
-                            'Profile',
+                            'Order details',
                             data.message,
                             'error'
                           )
