@@ -222,7 +222,7 @@ $(function(){
                         
                         Swal.fire(
                             'Deleted!',
-                            'User profile has been deleted.',
+                            'User profile has been deleted successfully.',
                             'success'
                           )
 
