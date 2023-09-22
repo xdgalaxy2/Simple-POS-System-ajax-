@@ -117,10 +117,10 @@ input[type="radio"]{
   user-select: none;
 }
 #signup:checked ~ label.login{
-  color: #000;
+  color: #9e9e9e;
 }
 #login:checked ~ label.signup{
-  color: #000;
+  color: #9e9e9e;
 }
 #login:checked ~ label.login{
   cursor: default;
